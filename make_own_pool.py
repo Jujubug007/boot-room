@@ -204,6 +204,179 @@ squad("Juventus","2016-17","Serie A",[
  ("Dani Alves",           "RB",172, 3, 4, 60, 86, 78, 86, 88, 86, 74),
  ("Sami Khedira",         "CM",189, 3, 2, 66, 82, 80, 70, 86, 70, 88)])
 
+
+
+# ---------------------------------------------------------------------------
+# Full squads: the rest of each matchday group. Seven starters above plus these
+# gives ~14 outfield players per season - the players who actually featured,
+# rather than a 25-man list padded with academy names who never played.
+# ---------------------------------------------------------------------------
+def extend(club, season, league, rows):
+    squad(club, season, league, rows)
+
+#                       name                 pos  cm  wf sm fin pas def cre  iq dri phy
+extend("Manchester United","2007-08","Premier League",[
+ ("Ryan Giggs",           "LW",179, 2, 4, 76, 88, 46, 90, 92, 86, 66),
+ ("Michael Carrick",      "CM",188, 3, 2, 52, 90, 74, 78, 92, 68, 72),
+ ("Owen Hargreaves",      "CM",180, 3, 2, 56, 82, 86, 66, 88, 72, 82),
+ ("Nani",                 "RW",175, 4, 5, 74, 74, 34, 80, 72, 90, 68),
+ ("Ji-sung Park",         "LW",175, 3, 3, 66, 76, 72, 70, 86, 78, 84),
+ ("Wes Brown",            "RB",185, 2, 2, 30, 70, 84, 40, 82, 60, 84),
+ ("John O'Shea",          "CB",188, 3, 2, 34, 74, 80, 42, 82, 60, 82)])
+
+extend("Manchester United","2014-15","Premier League",[
+ ("Robin van Persie",     "ST",183, 3, 4, 88, 82, 32, 82, 88, 80, 72),
+ ("Antonio Valencia",     "RB",180, 2, 3, 60, 70, 76, 66, 74, 78, 88),
+ ("Ashley Young",         "LW",175, 3, 3, 62, 78, 62, 76, 78, 78, 74),
+ ("Chris Smalling",       "CB",194, 2, 2, 32, 66, 84, 26, 78, 54, 90),
+ ("Phil Jones",           "CB",185, 2, 2, 30, 66, 80, 26, 72, 56, 88),
+ ("Luke Shaw",            "LB",185, 2, 3, 40, 74, 76, 68, 76, 78, 84),
+ ("Radamel Falcao",       "ST",177, 3, 3, 78, 62, 30, 58, 80, 70, 76)])
+
+extend("Barcelona","2010-11","La Liga",[
+ ("Pedro",                "RW",169, 3, 3, 82, 78, 44, 78, 86, 82, 66),
+ ("Gerard Pique",         "CB",194, 3, 2, 34, 86, 92, 40, 92, 62, 88),
+ ("Eric Abidal",          "LB",186, 3, 2, 34, 74, 86, 48, 84, 70, 88),
+ ("Javier Mascherano",    "DM",174, 2, 2, 30, 78, 90, 40, 90, 62, 86),
+ ("Seydou Keita",         "CM",182, 3, 3, 62, 80, 78, 66, 82, 72, 84),
+ ("Maxwell",              "LB",176, 2, 3, 46, 80, 76, 70, 82, 74, 74),
+ ("Bojan Krkic",          "ST",170, 3, 4, 76, 76, 30, 74, 78, 82, 54)])
+
+extend("Barcelona","2014-15","La Liga",[
+ ("Xavi",                 "CM",170, 3, 3, 56, 98, 64, 92, 98, 86, 56),
+ ("Dani Alves",           "RB",172, 3, 4, 60, 86, 78, 86, 88, 86, 76),
+ ("Javier Mascherano",    "CB",174, 2, 2, 28, 78, 90, 38, 90, 62, 84),
+ ("Pedro",                "RW",169, 3, 3, 80, 78, 44, 76, 86, 80, 66),
+ ("Jeremy Mathieu",       "CB",189, 3, 2, 36, 76, 84, 34, 80, 60, 84),
+ ("Rafinha",              "CM",176, 3, 4, 68, 82, 62, 78, 82, 84, 62),
+ ("Adriano",              "LB",172, 4, 3, 58, 76, 72, 74, 78, 80, 74)])
+
+extend("Real Madrid","2016-17","La Liga",[
+ ("Isco",                 "AM",176, 3, 5, 76, 90, 44, 94, 90, 94, 62),
+ ("Casemiro",             "DM",185, 3, 2, 52, 80, 92, 52, 88, 64, 94),
+ ("Dani Carvajal",        "RB",173, 2, 3, 52, 82, 84, 80, 86, 78, 82),
+ ("Raphael Varane",       "CB",191, 2, 2, 26, 78, 92, 28, 88, 60, 90),
+ ("Marco Asensio",        "LW",182, 4, 4, 82, 84, 40, 86, 82, 84, 68),
+ ("Alvaro Morata",        "ST",189, 3, 3, 84, 70, 34, 62, 80, 74, 84),
+ ("Lucas Vazquez",        "RW",173, 3, 3, 62, 76, 58, 74, 80, 78, 74)])
+
+extend("Real Madrid","2024-25","La Liga",[
+ ("Rodrygo",              "RW",174, 4, 4, 82, 80, 40, 84, 84, 90, 66),
+ ("Luka Modric",          "CM",172, 4, 4, 62, 92, 64, 90, 96, 88, 56),
+ ("Eder Militao",         "CB",186, 3, 2, 28, 76, 88, 28, 84, 62, 90),
+ ("Dani Carvajal",        "RB",173, 2, 3, 54, 84, 84, 82, 88, 78, 80),
+ ("Ferland Mendy",        "LB",180, 2, 3, 34, 72, 82, 56, 78, 78, 84),
+ ("Brahim Diaz",          "AM",171, 3, 5, 74, 80, 36, 84, 80, 92, 54),
+ ("Endrick",              "ST",173, 3, 4, 80, 60, 26, 58, 72, 80, 76)])
+
+extend("AC Milan","2006-07","Serie A",[
+ ("Cafu",                 "RB",176, 3, 3, 56, 80, 84, 78, 88, 82, 88),
+ ("Massimo Ambrosini",    "CM",186, 3, 2, 56, 78, 84, 60, 86, 64, 88),
+ ("Marek Jankulovski",    "LB",184, 2, 3, 52, 78, 78, 72, 80, 72, 80),
+ ("Kakha Kaladze",        "CB",191, 3, 2, 30, 72, 86, 32, 82, 58, 88),
+ ("Alberto Gilardino",    "ST",184, 3, 3, 84, 66, 30, 60, 82, 68, 76),
+ ("Serginho",             "LB",178, 2, 3, 54, 76, 72, 74, 78, 76, 78),
+ ("Massimo Oddo",         "RB",180, 3, 2, 48, 76, 80, 70, 82, 68, 78)])
+
+extend("Chelsea","2009-10","Premier League",[
+ ("Nicolas Anelka",       "ST",185, 4, 4, 88, 76, 32, 76, 84, 86, 78),
+ ("Michael Ballack",      "CM",189, 4, 2, 82, 84, 76, 78, 88, 68, 90),
+ ("Salomon Kalou",        "LW",183, 3, 4, 76, 68, 40, 68, 72, 82, 78),
+ ("Deco",                 "AM",174, 3, 4, 72, 90, 52, 90, 92, 86, 62),
+ ("John Obi Mikel",       "DM",188, 3, 2, 34, 82, 84, 54, 84, 70, 86),
+ ("Alex",                 "CB",192, 3, 2, 48, 66, 88, 28, 80, 52, 94),
+ ("Jose Bosingwa",        "RB",180, 3, 3, 52, 74, 78, 72, 78, 78, 82)])
+
+extend("Arsenal","2023-24","Premier League",[
+ ("Gabriel Jesus",        "ST",175, 3, 4, 78, 76, 44, 78, 82, 86, 74),
+ ("Leandro Trossard",     "LW",172, 4, 4, 80, 80, 40, 82, 84, 84, 62),
+ ("Ben White",            "RB",186, 3, 2, 44, 82, 84, 66, 86, 70, 82),
+ ("Oleksandr Zinchenko",  "LB",175, 3, 4, 46, 88, 72, 84, 88, 82, 64),
+ ("Jorginho",             "DM",178, 3, 3, 46, 92, 76, 80, 92, 74, 62),
+ ("Thomas Partey",        "DM",185, 3, 3, 52, 84, 86, 66, 86, 78, 88),
+ ("Takehiro Tomiyasu",    "RB",188, 3, 2, 32, 76, 84, 46, 84, 66, 86)])
+
+extend("Liverpool","2018-19","Premier League",[
+ ("Jordan Henderson",     "CM",182, 3, 2, 54, 84, 80, 74, 88, 70, 86),
+ ("Georginio Wijnaldum",  "CM",175, 3, 3, 66, 84, 74, 74, 86, 82, 78),
+ ("James Milner",         "CM",175, 5, 3, 66, 86, 78, 78, 90, 72, 84),
+ ("Joel Matip",           "CB",195, 3, 2, 30, 80, 86, 34, 84, 66, 88),
+ ("Joe Gomez",            "CB",188, 2, 2, 26, 76, 84, 30, 82, 68, 88),
+ ("Divock Origi",         "ST",185, 3, 3, 76, 62, 30, 58, 72, 72, 82),
+ ("Xherdan Shaqiri",      "RW",169, 4, 4, 78, 82, 36, 84, 80, 84, 70)])
+
+extend("Bayern Munich","2012-13","Bundesliga",[
+ ("Mario Mandzukic",      "ST",190, 3, 2, 84, 66, 44, 60, 80, 66, 92),
+ ("Toni Kroos",           "CM",183, 5, 3, 70, 94, 62, 88, 92, 74, 68),
+ ("Javi Martinez",        "DM",190, 3, 2, 48, 82, 90, 56, 88, 66, 92),
+ ("Dante",                "CB",187, 3, 2, 36, 76, 88, 34, 84, 62, 90),
+ ("Luiz Gustavo",         "DM",187, 3, 2, 44, 78, 86, 52, 84, 64, 90),
+ ("Rafinha",              "RB",172, 3, 3, 50, 78, 78, 70, 80, 76, 78),
+ ("Claudio Pizarro",      "ST",186, 3, 3, 82, 74, 30, 70, 84, 72, 78)])
+
+extend("Inter","2009-10","Serie A",[
+ ("Goran Pandev",         "LW",181, 3, 3, 78, 78, 44, 78, 82, 78, 72),
+ ("Thiago Motta",         "DM",187, 3, 3, 56, 86, 84, 70, 88, 72, 84),
+ ("Dejan Stankovic",      "CM",182, 4, 3, 76, 84, 70, 82, 86, 76, 80),
+ ("Cristian Chivu",       "CB",188, 3, 2, 34, 76, 84, 40, 82, 62, 84),
+ ("Marco Materazzi",      "CB",193, 3, 2, 40, 66, 86, 26, 78, 50, 94),
+ ("Mario Balotelli",      "ST",189, 3, 4, 84, 66, 28, 62, 70, 80, 90),
+ ("Ivan Cordoba",         "CB",173, 2, 2, 28, 72, 86, 30, 86, 60, 82)])
+
+extend("Manchester City","2022-23","Premier League",[
+ ("Ilkay Gundogan",       "CM",180, 4, 4, 78, 90, 70, 86, 92, 84, 68),
+ ("Phil Foden",           "AM",171, 4, 4, 82, 86, 42, 90, 88, 90, 55),
+ ("Riyad Mahrez",         "RW",179, 2, 5, 82, 84, 34, 90, 84, 92, 58),
+ ("Manuel Akanji",        "CB",188, 3, 2, 28, 84, 88, 36, 88, 68, 86),
+ ("Nathan Ake",           "CB",180, 3, 2, 40, 78, 86, 34, 84, 68, 84),
+ ("Kyle Walker",          "RB",183, 2, 3, 44, 74, 82, 64, 82, 76, 90),
+ ("Julian Alvarez",       "ST",174, 4, 4, 84, 76, 48, 78, 86, 84, 72)])
+
+extend("Paris Saint-Germain","2017-18","Ligue 1",[
+ ("Julian Draxler",       "AM",185, 3, 4, 74, 82, 40, 84, 82, 86, 68),
+ ("Adrien Rabiot",        "CM",188, 3, 3, 58, 84, 76, 74, 84, 80, 80),
+ ("Presnel Kimpembe",     "CB",189, 2, 2, 26, 76, 84, 28, 80, 60, 88),
+ ("Dani Alves",           "RB",172, 3, 4, 58, 84, 76, 84, 86, 84, 72),
+ ("Layvin Kurzawa",       "LB",182, 2, 3, 52, 74, 74, 70, 74, 76, 80),
+ ("Giovani Lo Celso",     "CM",177, 3, 4, 68, 84, 66, 82, 84, 84, 66),
+ ("Thomas Meunier",       "RB",191, 3, 2, 54, 76, 78, 72, 80, 70, 86)])
+
+extend("Barcelona","2008-09","La Liga",[
+ ("Dani Alves",           "RB",172, 3, 4, 60, 86, 78, 86, 86, 86, 78),
+ ("Eric Abidal",          "LB",186, 3, 2, 32, 74, 86, 46, 84, 70, 88),
+ ("Rafael Marquez",       "CB",182, 3, 2, 36, 82, 86, 44, 88, 66, 82),
+ ("Seydou Keita",         "CM",182, 3, 3, 64, 80, 78, 66, 82, 72, 84),
+ ("Sergio Busquets",      "DM",189, 3, 2, 36, 88, 82, 60, 94, 66, 76),
+ ("Bojan Krkic",          "ST",170, 3, 4, 74, 74, 30, 72, 76, 80, 54),
+ ("Sylvinho",             "LB",174, 2, 3, 48, 78, 76, 72, 82, 72, 72)])
+
+extend("Borussia Dortmund","2012-13","Bundesliga",[
+ ("Jakub Blaszczykowski", "RW",176, 3, 3, 74, 80, 52, 80, 80, 82, 78),
+ ("Marcel Schmelzer",     "LB",181, 2, 3, 44, 76, 80, 68, 80, 74, 80),
+ ("Sven Bender",          "DM",184, 2, 2, 38, 76, 86, 48, 84, 62, 88),
+ ("Sebastian Kehl",       "CM",186, 3, 2, 52, 78, 82, 60, 86, 62, 86),
+ ("Kevin Grosskreutz",    "LW",184, 3, 3, 62, 74, 66, 68, 76, 72, 82),
+ ("Felipe Santana",       "CB",186, 2, 2, 34, 68, 82, 26, 76, 54, 86),
+ ("Ivan Perisic",         "LW",186, 4, 4, 78, 78, 46, 80, 80, 84, 82)])
+
+extend("Atletico Madrid","2013-14","La Liga",[
+ ("Arda Turan",           "LW",178, 3, 5, 76, 84, 52, 88, 84, 90, 70),
+ ("Raul Garcia",          "CM",184, 3, 2, 70, 76, 76, 66, 82, 64, 88),
+ ("Joao Miranda",         "CB",186, 2, 2, 30, 74, 90, 28, 90, 58, 88),
+ ("Jose Sosa",            "CM",180, 3, 3, 66, 84, 62, 82, 82, 76, 70),
+ ("Adrian Lopez",         "ST",176, 3, 3, 80, 70, 44, 68, 80, 78, 74),
+ ("Mario Suarez",         "DM",186, 3, 2, 44, 78, 84, 56, 82, 62, 88),
+ ("Toby Alderweireld",    "CB",187, 3, 2, 32, 82, 86, 38, 88, 62, 84)])
+
+extend("Juventus","2016-17","Serie A",[
+ ("Mario Mandzukic",      "LW",190, 3, 2, 80, 68, 58, 62, 82, 66, 92),
+ ("Juan Cuadrado",        "RW",176, 2, 4, 70, 78, 50, 82, 78, 88, 74),
+ ("Claudio Marchisio",    "CM",180, 4, 3, 70, 86, 76, 78, 88, 74, 74),
+ ("Andrea Barzagli",      "CB",187, 2, 2, 24, 74, 90, 26, 92, 54, 84),
+ ("Alex Sandro",          "LB",181, 3, 3, 56, 78, 80, 74, 80, 80, 86),
+ ("Stephan Lichtsteiner", "RB",182, 3, 2, 52, 76, 78, 70, 82, 72, 84),
+ ("Kwadwo Asamoah",       "LB",180, 3, 3, 52, 78, 74, 72, 78, 78, 80)])
+
 POOL = [p for s in SQUADS for p in s]
 
 if __name__ == "__main__":
