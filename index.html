@@ -317,29 +317,27 @@ $("#wm").addEventListener("input",e=>{wm=+e.target.value/100;
   $("#wmv").textContent=Math.round(wm*100)+"%"; if(S) render(S.picks.length>=ROUNDS);});
 $("#seed").addEventListener("keydown",e=>{if(e.key==="Enter") newGame(parseInt(e.target.value,10));});
 
-$("#poolh").textContent = `${POOL.length} players`;
-const perNat = {}; POOL.forEach(p=>perNat[p.team]=(perNat[p.team]||0)+1);
+$("#poolh").textContent = `${SQUADS.length} squads`;
 $("#poolnotes").innerHTML =
-  `<p><strong>${POOL.length} outfield players</strong> from ${NATIONS.length} nations, every one with at least
-   150 minutes at Euro 2024. Goalkeepers are excluded &mdash; the nine attributes do not describe their job.</p>
-   <p>Deepest squads: ${Object.entries(perNat).sort((a,b)=>b[1]-a[1]).slice(0,4).map(([n,c])=>`${n} (${c})`).join(", ")}.</p>`;
+  `<p><strong>${POOL.length} players across ${SQUADS.length} squad-seasons</strong>, every one from the last
+   twenty years. Goalkeepers are excluded - the ten categories do not describe their job.</p>
+   <p>A squad is only dealt while it still has five players left, so every board is a real selection
+   rather than leftovers.</p>`;
 
 $("#notes").innerHTML = `
-  <p><strong>These are real numbers.</strong> Every rating comes from
-  <a href="https://github.com/statsbomb/open-data">StatsBomb Open Data</a> for UEFA Euro 2024 &mdash; free,
-  public, attribution required. I aggregated all 51 matches of raw event data, computed per-90 metrics,
-  and converted them to ratings. Nothing here is invented.</p>
-  <p><strong>Why percentile, not raw stat.</strong> You asked for higher stat means closer to 100. Done
-  directly that just sorts by position: centre-backs would own Defending and Aerial while strikers own
-  Finishing, and every board would be a formality. So each player is ranked against
-  <em>others in their own position group</em> &mdash; a full-back on 88 for Progression is 88th percentile
-  among full-backs and wing-backs. Ratings are floored at 20 so nobody reads as zero.</p>
-  <p><strong>There is no Pace rating,</strong> and that is not an oversight. Event data records what happened
-  and where, not how fast anyone ran. Any pace number would be invented, so the ninth attribute is
-  <code>Ball Security</code> &mdash; the inverse of miscontrols and dispossessions, which the data does support.</p>
-  <p><strong>Not FBref.</strong> Sports Reference's terms forbid building tools on data scraped from their
-  sites, and most of their football data is licensed from third parties who bar redistribution outright.
-  StatsBomb publish theirs specifically to be used like this.</p>`;
+  <p><strong>These ratings are my own.</strong> Nothing is scraped and no third-party data is used.
+  Each card is a judgement call about that player in that specific season, on a position-normalised
+  scale - a centre-back's Finishing of 24 and a striker's Defending of 24 both mean "poor for that
+  role", so a board never collapses into "just take the striker".</p>
+  <p><strong>Three of the ten are facts, not opinions.</strong> Height comes from the player's real
+  height in centimetres, mapped across 165-195cm. Weak Foot and Skill Moves are the familiar five-star
+  scales. The raw value sits next to the rating so you can see where the number came from.</p>
+  <p><strong>Why the squads matter.</strong> A spin gives you one club in one season, so you are always
+  choosing within a real XI. Peak seasons carry peak numbers - which is why there is no separate icon
+  tier. Prime Ronaldo simply is the 2007-08 card.</p>
+  <p><strong>Not FBref.</strong> Sports Reference's terms forbid building tools on data scraped from
+  their sites, and most of their football data is licensed from third parties who bar redistribution.
+  Original estimates sidestep that entirely.</p>`;
 
 newGame();
 })();
