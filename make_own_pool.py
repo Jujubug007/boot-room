@@ -937,7 +937,44 @@ squad("AS Roma","2017-18","Serie A",[
  ("Bruno Peres",         "RB",178, 3, 3, 52, 72, 72, 70, 72, 80, 82),
  ("Patrik Schick",       "ST",191, 4, 3, 78, 66, 28, 62, 76, 72, 80)])
 
-POOL = [p for s in SQUADS for p in s]
+# ---------------------------------------------------------------------------
+# Rating calibration.
+#
+# The seven judged attributes were hand-set across many authoring passes, and it
+# showed: Passing landed with a standard deviation of 7.7 and Soccer IQ 6.5, with
+# nobody below 66 on IQ. Two of the ten rounds were nearly coin flips.
+#
+# Fix: rank every player against the whole pool on each judged attribute and map
+# that rank onto a full 24-99 curve. Order is preserved exactly - the best passer
+# is still the best passer - but the spacing becomes informative instead of
+# everyone bunching in the seventies.
+#
+# Ranking is GLOBAL, not per position. This is a "build the perfect player" game,
+# so Finishing should mean the best finisher outright; a centre-back genuinely
+# should not score well on it.
+#
+# Height, Weak Foot and Skill Moves are left alone - they come from real facts
+# (centimetres and the five-star scales), so re-ranking them would break the tie
+# between the rating and the value shown on the card.
+# ---------------------------------------------------------------------------
+JUDGED = ["finishing","passing","defending","creativity","iq","dribbling","physical"]
+
+def calibrate(pool):
+    for a in JUDGED:
+        raw = {id(p): p[a] for p in pool}
+        vals = sorted(raw.values())
+        n = len(vals)
+        peak = vals[-1]                              # the hand-set high water mark
+        for p in pool:
+            v = raw[id(p)]
+            below = sum(1 for w in vals if w < v)
+            equal = sum(1 for w in vals if w == v)
+            pct = (below + 0.5 * equal) / n          # midrank keeps ties together
+            # the curve tops out at 99 so a designed peak stays visibly separate
+            p[a] = 100 if v == peak else int(round(24 + pct * 74))
+    return pool
+
+POOL = calibrate([p for s in SQUADS for p in s])
 
 if __name__ == "__main__":
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "players_own.json")
