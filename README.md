@@ -1,6 +1,8 @@
 # Boot Room
 
-A ten-round football drafting game with a career simulator. 360 players across 18 squad-seasons, 20 per squad. Every spin deals a real squad from the last twenty years
+A ten-round football drafting game with a career simulator. 480 players across 24 squad-seasons. Every spin deals a starting XI to choose from.
+
+Every club has been continuously in a top-five European league since 2010. Every spin deals a real squad from the last twenty years
 — Manchester United 2007-08, Barcelona 2010-11, Chelsea 2009-10 — and you draft one player
 from it for one attribute. One weak link drags the whole build down.
 
